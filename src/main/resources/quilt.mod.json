@@ -1,14 +1,14 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "com.example",
-		"id": "example_mod",
+		"group": "io.github",
+		"id": "tbh_mod",
 		"version": "${version}",
 		"metadata": {
-			"name": "Mod Name",
+			"name": "Tbh Mod",
 			"description": "A short description of your mod.",
 			"contributors": {
-				"Your name here": "Owner"
+				"Bubblie": "Lead Developer, Texturer, Modeler"
 			},
 			"contact": {
 				"homepage": "https://example.com/",
@@ -19,7 +19,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.example.example_mod.ExampleMod"
+			"init": "io.github.tbh_mod.Main",
+			"client_init": "io.github.tbh_mod.ClientInitializer"
 		},
 		"depends": [
 			{
@@ -36,5 +37,5 @@
 			}
 		]
 	},
-	"mixin": "example_mod.mixins.json"
+	"mixin": "tbh_mod.mixins.json"
 }
