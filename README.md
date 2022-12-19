@@ -3,7 +3,7 @@
 ## About
 Adds the Autism and ADHD creature (TBH and BTW creature) to minecraft. They are both tameable and will interact with each other. 
 
-##Credit
+## Credit
 - WoodierTexas: Helping with the Concept and the base model I used before I made my own.
 - XanderStuff and FnigeSystem: Both helped me with blockbench shennanigans
 
