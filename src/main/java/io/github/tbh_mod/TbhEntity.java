@@ -5,10 +5,7 @@ import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.ai.goal.FollowOwnerGoal;
-import net.minecraft.entity.ai.goal.HoldInHandsGoal;
-import net.minecraft.entity.ai.goal.TemptGoal;
-import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
@@ -47,8 +44,10 @@ public class TbhEntity extends TameableEntity {
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(1, new WanderAroundFarGoal(this, 0.8f));
-		this.goalSelector.add(0, new FollowOwnerGoal(this, 0.5f, 1.0f, 20.f, false));
-		this.goalSelector.add(2, new TemptGoal(this, 0.5f, Ingredient.ofItems(TbhRegistry.COLA_BOTTLE_ITEM), false));
+		this.goalSelector.add(1, new FollowOwnerGoal(this, 0.5f, 1.0f, 20.f, false));
+		this.goalSelector.add(0, new TemptGoal(this, 0.5f, Ingredient.ofItems(TbhRegistry.COLA_BOTTLE_ITEM), false));
+		this.goalSelector.add(0, new AttackWithOwnerGoal(this));
+		this.goalSelector.add(0, new AttackGoal(this));
 		super.initGoals();
 	}
 
