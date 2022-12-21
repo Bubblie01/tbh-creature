@@ -38,7 +38,7 @@ public class TbhEntity extends TameableEntity {
 	}
 
 	public static void registerTbhEntityAttributes() {
-		FabricDefaultAttributeRegistry.register(TBH_ENTITY_TYPE, createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5f).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 5.0f).add(EntityAttributes.GENERIC_ATTACK_SPEED, 4.0f).add(EntityAttributes.GENERIC_ATTACK_DAMAGE,  0.5f).add(EntityAttributes.GENERIC_MAX_HEALTH, 12f));
+		FabricDefaultAttributeRegistry.register(TBH_ENTITY_TYPE, createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5f).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 5.0f).add(EntityAttributes.GENERIC_ATTACK_SPEED, 4.0f).add(EntityAttributes.GENERIC_ATTACK_DAMAGE,  2.0f).add(EntityAttributes.GENERIC_MAX_HEALTH, 12f));
 	}
 
 	@Override

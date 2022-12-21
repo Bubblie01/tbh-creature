@@ -14,6 +14,7 @@ public class Main implements ModInitializer {
 	public void onInitialize(ModContainer mod) {
 		LOGGER.info("Initializing Tbh Mod!", mod.metadata().name());
 		TbhEntity.registerTbhEntityAttributes();
+		BtwEntity.registerBtwEntityAttributes();
 		TbhRegistry.registerItems();
 	}
 }

@@ -11,9 +11,14 @@ public class ClientInitializer implements ClientModInitializer {
 	public void onInitializeClient(ModContainer mod) {
 
 		EntityModelLayerRegistry.registerModelLayer(TbhEntityModel.TBH_MODEL_LAYER, TbhEntityModel::getTexturedModelData);
+		EntityModelLayerRegistry.registerModelLayer(BtwEntityModel.BTW_MODEL_LAYER, BtwEntityModel::getTexturedModelData);
 
 		EntityRendererRegistry.register(TbhEntity.TBH_ENTITY_TYPE, ((context -> {
 			return new TbhEntityRenderer(context);
+		})));
+
+		EntityRendererRegistry.register(BtwEntity.BTW_ENTITY_TYPE, ((context -> {
+			return new BtwEntityRenderer(context);
 		})));
 	}
 }

@@ -15,7 +15,7 @@ import net.minecraft.util.math.MathHelper;
 public class TbhEntityModel<T extends TbhEntity> extends QuadrupedEntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final EntityModelLayer TBH_MODEL_LAYER = new EntityModelLayer(new Identifier("example_mod", "tbh_entity_model"), "tbh_entity_model");
-	private ModelPart head;
+	protected final ModelPart head;
 	protected final ModelPart body;
 	protected final ModelPart rightHindLeg;
 	protected final ModelPart leftHindLeg;
