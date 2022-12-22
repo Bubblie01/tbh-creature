@@ -1,5 +1,8 @@
-package io.github.tbh_mod;
+package io.github.tbh_mod.entities.renderers;
 
+import io.github.tbh_mod.Main;
+import io.github.tbh_mod.entities.TbhEntity;
+import io.github.tbh_mod.entities.models.TbhEntityModel;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;

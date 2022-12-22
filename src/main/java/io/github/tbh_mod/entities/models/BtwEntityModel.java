@@ -1,16 +1,15 @@
-package io.github.tbh_mod;
+package io.github.tbh_mod.entities.models;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import io.github.tbh_mod.Main;
+import io.github.tbh_mod.entities.BtwEntity;
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.render.entity.model.QuadrupedEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-
-import javax.swing.text.html.parser.Entity;
 
 public class BtwEntityModel<T extends BtwEntity> extends QuadrupedEntityModel<T> {
 
@@ -35,7 +34,7 @@ public class BtwEntityModel<T extends BtwEntity> extends QuadrupedEntityModel<T>
 
 	//private ModelPart leftEar_rotate;
 
-	protected BtwEntityModel(ModelPart root) {
+	public BtwEntityModel(ModelPart root) {
 		super(root, true, 0.0f, 0.0f, 0.0f, 0.0f, 0);
 		this.head = root.getChild(EntityModelPartNames.HEAD);
 		this.body = root.getChild(EntityModelPartNames.BODY);

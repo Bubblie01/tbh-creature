@@ -1,4 +1,4 @@
-package io.github.tbh_mod;
+package io.github.tbh_mod.entities.ai;
 
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.PathAwareEntity;

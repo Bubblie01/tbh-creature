@@ -1,5 +1,14 @@
 package io.github.tbh_mod;
 
+import io.github.tbh_mod.entities.BtwEntity;
+import io.github.tbh_mod.entities.ColaEntity;
+import io.github.tbh_mod.entities.TbhEntity;
+import io.github.tbh_mod.entities.models.BtwEntityModel;
+import io.github.tbh_mod.entities.models.ColaEntityModel;
+import io.github.tbh_mod.entities.models.TbhEntityModel;
+import io.github.tbh_mod.entities.renderers.BtwEntityRenderer;
+import io.github.tbh_mod.entities.renderers.ColaEntityRenderer;
+import io.github.tbh_mod.entities.renderers.TbhEntityRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import org.quiltmc.loader.api.ModContainer;

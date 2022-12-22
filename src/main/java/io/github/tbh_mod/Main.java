@@ -1,5 +1,8 @@
 package io.github.tbh_mod;
 
+import io.github.tbh_mod.entities.BtwEntity;
+import io.github.tbh_mod.entities.ColaEntity;
+import io.github.tbh_mod.entities.TbhEntity;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import org.slf4j.Logger;

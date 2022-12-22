@@ -1,16 +1,13 @@
-package io.github.tbh_mod;// Made with Blockbench 4.2.5
+package io.github.tbh_mod.entities.models;// Made with Blockbench 4.2.5
 // Exported for Minecraft version 1.17 - 1.18 with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
 
 import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.vertex.VertexConsumer;
+import io.github.tbh_mod.entities.TbhEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.*;
-import net.minecraft.client.render.model.json.ModelTransformation;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.MathHelper;
 
 public class TbhEntityModel<T extends TbhEntity> extends QuadrupedEntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor

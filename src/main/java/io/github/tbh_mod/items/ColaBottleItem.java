@@ -1,4 +1,4 @@
-package io.github.tbh_mod;
+package io.github.tbh_mod.items;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

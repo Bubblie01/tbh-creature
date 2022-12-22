@@ -1,12 +1,13 @@
-package io.github.tbh_mod;
+package io.github.tbh_mod.entities.models;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import io.github.tbh_mod.Main;
+import io.github.tbh_mod.entities.ColaEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.data.client.model.TexturedModel;
 import net.minecraft.util.Identifier;
 
 public class ColaEntityModel <T extends ColaEntity> extends EntityModel<T> {

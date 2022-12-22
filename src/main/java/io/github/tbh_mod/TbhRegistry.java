@@ -1,5 +1,6 @@
 package io.github.tbh_mod;
 
+import io.github.tbh_mod.items.ColaBottleItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.SoundEvent;
