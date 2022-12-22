@@ -15,6 +15,8 @@ public class Main implements ModInitializer {
 		LOGGER.info("Initializing Tbh Mod!", mod.metadata().name());
 		TbhEntity.registerTbhEntityAttributes();
 		BtwEntity.registerBtwEntityAttributes();
+		ColaEntity.registerColaEntityAttributes();
 		TbhRegistry.registerItems();
+		TbhRegistry.registerSounds();
 	}
 }

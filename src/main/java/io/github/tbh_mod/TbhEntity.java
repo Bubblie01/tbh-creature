@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -33,6 +34,12 @@ public class TbhEntity extends TameableEntity {
 
 	@Nullable
 	@Override
+	protected SoundEvent getAmbientSound() {
+		return TbhRegistry.YIPEE_SOUND_EVENT;
+	}
+
+	@Nullable
+	@Override
 	public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
 		return entity;
 	}
@@ -43,11 +50,12 @@ public class TbhEntity extends TameableEntity {
 
 	@Override
 	protected void initGoals() {
-		this.goalSelector.add(1, new WanderAroundFarGoal(this, 0.8f));
-		this.goalSelector.add(1, new FollowOwnerGoal(this, 0.5f, 1.0f, 20.f, false));
-		this.goalSelector.add(0, new TemptGoal(this, 0.5f, Ingredient.ofItems(TbhRegistry.COLA_BOTTLE_ITEM), false));
-		this.goalSelector.add(0, new AttackWithOwnerGoal(this));
-		this.goalSelector.add(0, new AttackGoal(this));
+		this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.8f));
+		this.goalSelector.add(3, new FollowOwnerGoal(this, 0.5f, 1.0f, 20.f, false));
+		this.goalSelector.add(2, new TemptGoal(this, 0.5f, Ingredient.ofItems(TbhRegistry.COLA_BOTTLE_ITEM), false));
+		this.targetSelector.add(1, new AttackWithOwnerGoal(this));
+		this.targetSelector.add(1, new TrackOwnerAttackerGoal(this));;
+		this.goalSelector.add(4, new MeleeAttackGoal(this, 0.5f, true));
 		super.initGoals();
 	}
 

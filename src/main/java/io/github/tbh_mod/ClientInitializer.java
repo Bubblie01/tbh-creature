@@ -12,6 +12,7 @@ public class ClientInitializer implements ClientModInitializer {
 
 		EntityModelLayerRegistry.registerModelLayer(TbhEntityModel.TBH_MODEL_LAYER, TbhEntityModel::getTexturedModelData);
 		EntityModelLayerRegistry.registerModelLayer(BtwEntityModel.BTW_MODEL_LAYER, BtwEntityModel::getTexturedModelData);
+		EntityModelLayerRegistry.registerModelLayer(ColaEntityModel.COLA_ENTITY_MODEL_LAYER, ColaEntityModel::getTexturedModelData);
 
 		EntityRendererRegistry.register(TbhEntity.TBH_ENTITY_TYPE, ((context -> {
 			return new TbhEntityRenderer(context);
@@ -19,6 +20,10 @@ public class ClientInitializer implements ClientModInitializer {
 
 		EntityRendererRegistry.register(BtwEntity.BTW_ENTITY_TYPE, ((context -> {
 			return new BtwEntityRenderer(context);
+		})));
+
+		EntityRendererRegistry.register(ColaEntity.COLA_ENTITY_TYPE, ((context -> {
+			return new ColaEntityRenderer(context);
 		})));
 	}
 }
