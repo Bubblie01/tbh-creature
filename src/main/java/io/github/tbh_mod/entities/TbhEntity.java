@@ -3,12 +3,10 @@ package io.github.tbh_mod.entities;
 import io.github.tbh_mod.Main;
 import io.github.tbh_mod.TbhRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityStatuses;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,10 +22,15 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.quiltmc.qsl.entity.api.QuiltEntityTypeBuilder;
 
+import java.util.function.Predicate;
+
 public class TbhEntity extends TameableEntity {
 
 	public static final EntityType<TbhEntity> TBH_ENTITY_TYPE = Registry.register(Registry.ENTITY_TYPE, new Identifier(Main.MOD_ID, "tbh_entity"), QuiltEntityTypeBuilder.create(SpawnGroup.CREATURE, TbhEntity::new).setDimensions(EntityDimensions.changing(0.5F, 1.0F)).build());
-
+	public static final Predicate<LivingEntity> FOLLOW_TAMED_PREDICATE = entity -> {
+		EntityType<?> entityType = entity.getType();
+		return entityType == ColaEntity.COLA_ENTITY_TYPE;
+	};
 	protected TbhEntity(EntityType<? extends TameableEntity> entityType, World world) {
 		super(entityType, world);
 		this.setTamed(false);
@@ -51,12 +54,15 @@ public class TbhEntity extends TameableEntity {
 
 	@Override
 	protected void initGoals() {
-		this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.8f));
+		this.goalSelector.add(1, new MeleeAttackGoal(this, 0.5f, true));
+		this.goalSelector.add(2, new WanderAroundFarGoal(this, 0.8f));
 		this.goalSelector.add(3, new FollowOwnerGoal(this, 0.5f, 1.0f, 20.f, false));
-		this.goalSelector.add(2, new TemptGoal(this, 0.5f, Ingredient.ofItems(TbhRegistry.COLA_BOTTLE_ITEM), false));
+		this.goalSelector.add(4, new TemptGoal(this, 0.5f, Ingredient.ofItems(TbhRegistry.COLA_BOTTLE_ITEM), false));
+		this.goalSelector.add(5, new PounceAtTargetGoal(this, 0.4F));
 		this.targetSelector.add(1, new AttackWithOwnerGoal(this));
-		this.targetSelector.add(1, new TrackOwnerAttackerGoal(this));;
-		this.goalSelector.add(4, new MeleeAttackGoal(this, 0.5f, true));
+		this.targetSelector.add(2, new TrackOwnerAttackerGoal(this));;
+		this.targetSelector.add(3, new UntamedTargetGoal<>(this, AnimalEntity.class, false, FOLLOW_TAMED_PREDICATE));
+
 		super.initGoals();
 	}
 

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "tbh_mod:items/btw_spawn_egg_item"
+  }
+}

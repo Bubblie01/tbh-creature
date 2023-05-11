@@ -97,7 +97,7 @@ public class ColaEntity extends PathAwareEntity {
 	protected void initGoals() {
 		this.goalSelector.add(1, new WanderAroundFarGoal(this, 0.4f));
 		this.goalSelector.add(1, new LookAroundGoal(this));
-		this.goalSelector.add(1, new JumpAroundGoal(this, 0.4f));
+		this.goalSelector.add(1, new JumpAroundGoal(this, 0.6f));
 		super.initGoals();
 	}
 

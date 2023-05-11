@@ -56,7 +56,7 @@ public class BtwEntity extends TameableEntity {
 		this.goalSelector.add(3, new FollowOwnerGoal(this, 0.5f, 1.0f, 20.f, false));
 		this.goalSelector.add(2, new TemptGoal(this, 0.5f, Ingredient.ofItems(TbhRegistry.COLA_BOTTLE_ITEM), false));
 		this.goalSelector.add(1, new AttackWithOwnerGoal(this));
-		this.goalSelector.add(1, new MeleeAttackGoal(this, 0.5f, true));
+		this.goalSelector.add(1, new MeleeAttackGoal(this, 0.5f, false));
 		super.initGoals();
 	}
 

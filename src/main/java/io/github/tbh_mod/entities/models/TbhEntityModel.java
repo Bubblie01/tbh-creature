@@ -20,7 +20,7 @@ public class TbhEntityModel<T extends TbhEntity> extends QuadrupedEntityModel<T>
 	protected final ModelPart leftFrontLeg;
 
 	public TbhEntityModel(ModelPart root) {
-		super(root,true, 0.0f, 0.0f, 0.0f, 0.0f, 0);
+		super(root, true, 10.0F, 2.0F, 2.0F, 2.0F, 24);
 		this.head = root.getChild(EntityModelPartNames.HEAD);
 		this.body = root.getChild(EntityModelPartNames.BODY);
 		this.rightFrontLeg = root.getChild(EntityModelPartNames.RIGHT_FRONT_LEG);

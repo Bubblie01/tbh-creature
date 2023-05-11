@@ -35,15 +35,13 @@ public class BtwEntityModel<T extends BtwEntity> extends QuadrupedEntityModel<T>
 	//private ModelPart leftEar_rotate;
 
 	public BtwEntityModel(ModelPart root) {
-		super(root, true, 0.0f, 0.0f, 0.0f, 0.0f, 0);
+		super(root, true, 10.0F, 2.0F, 2.0F, 2.0F, 24);
 		this.head = root.getChild(EntityModelPartNames.HEAD);
 		this.body = root.getChild(EntityModelPartNames.BODY);
 		this.rightFrontLeg = root.getChild(EntityModelPartNames.RIGHT_FRONT_LEG);
 		this.rightHindLeg = root.getChild(EntityModelPartNames.RIGHT_HIND_LEG);
 		this.leftFrontLeg = root.getChild(EntityModelPartNames.LEFT_FRONT_LEG);
 		this.leftHindLeg = root.getChild(EntityModelPartNames.LEFT_HIND_LEG);
-		//this.rightEar = root.getChild(EntityModelPartNames.RIGHT_EAR);
-		//this.leftEar = root.getChild(EntityModelPartNames.LEFT_EAR);
 	}
 
 	public static TexturedModelData getTexturedModelData() {
